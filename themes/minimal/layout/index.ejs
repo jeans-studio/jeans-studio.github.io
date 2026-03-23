@@ -1,0 +1,25 @@
+<div class="post-list">
+  <% page.posts.each(function(post) { %>
+    <article class="post-item">
+      <time class="post-date"><%= post.date.format('YYYY.MM.DD') %></time>
+      <h2 class="post-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </h2>
+      <% if (post.excerpt) { %>
+        <div class="post-excerpt">
+          <%- post.excerpt %>
+        </div>
+      <% } %>
+    </article>
+  <% }); %>
+</div>
+
+<% if (page.total > 1) { %>
+  <nav class="pagination">
+    <%- paginator({
+      prev_text: '← Previous',
+      next_text: 'Next →',
+      mid_size: 1
+    }) %>
+  </nav>
+<% } %>

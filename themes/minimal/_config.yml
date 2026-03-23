@@ -1,0 +1,11 @@
+# Minimal Theme Configuration
+menu:
+  Home: /
+  Archives: /archives
+  About: /about
+
+# Social links (optional)
+social:
+
+# Analytics (optional)
+analytics:

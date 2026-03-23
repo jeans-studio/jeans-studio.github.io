@@ -1,0 +1,30 @@
+<div class="archive">
+  <h2 class="archive-title">Archives</h2>
+
+  <div class="archive-list">
+    <% var last; %>
+    <% page.posts.each(function(post) { %>
+      <% var year = post.date.format('YYYY'); %>
+      <% if (last !== year) { %>
+        <% if (last !== undefined) { %></div><% } %>
+        <div class="archive-year">
+          <h3><%= year %></h3>
+        <% last = year; %>
+      <% } %>
+      <article class="archive-item">
+        <time class="archive-date"><%= post.date.format('MM.DD') %></time>
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </article>
+    <% }); %>
+    <% if (page.posts.length > 0) { %></div><% } %>
+  </div>
+</div>
+
+<% if (page.total > 1) { %>
+  <nav class="pagination">
+    <%- paginator({
+      prev_text: '← Previous',
+      next_text: 'Next →'
+    }) %>
+  </nav>
+<% } %>
