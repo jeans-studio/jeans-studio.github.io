@@ -527,3 +527,13 @@ a:hover {
 body.no-transitions * {
   transition: none !important;
 }
+
+/* Footer link style */
+.site-footer a {
+  color: var(--color-text-tertiary);
+  border: none;
+}
+
+.site-footer a:hover {
+  color: var(--color-text);
+}
