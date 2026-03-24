@@ -35,3 +35,25 @@
         </a>
         <% } %>
 </nav>
+
+<% if (config.giscus && config.giscus.enable) { %>
+<section class="post-comments">
+  <h3 class="comments-title">댓글</h3>
+  <script src="https://giscus.app/client.js"
+          data-repo="<%= config.giscus.repo %>"
+          data-repo-id="<%= config.giscus.repo_id || '' %>"
+          data-category="<%= config.giscus.category %>"
+          data-category-id="<%= config.giscus.category_id || '' %>"
+          data-mapping="<%= config.giscus.mapping %>"
+          data-strict="0"
+          data-reactions-enabled="<%= config.giscus.reactions_enabled %>"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="ko"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+</section>
+<% } %>

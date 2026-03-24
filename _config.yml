@@ -106,3 +106,14 @@ deploy:
   repo: https://github.com/jeans-studio/jeans-studio.github.io.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+# Comments
+## Giscus settings (https://giscus.app)
+giscus:
+  enable: true
+  repo: jeans-studio/jeans-studio.github.io
+  repo_id: R_kgDORuEFZQ
+  category: General
+  category_id: DIC_kwDORuEFZc4C5I4P
+  mapping: pathname
+  reactions_enabled: 1
